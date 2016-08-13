@@ -3,6 +3,6 @@ class WelcomeController < ApplicationController
   end
 
   def upload
-    render nothing: true
+    render json: { size: params[:file].size }.to_json
   end
 end

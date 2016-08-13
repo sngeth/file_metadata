@@ -6,5 +6,8 @@ RSpec.feature "Widget management", :type => :feature do
 
     attach_file("file", Rails.root + "spec/fixtures/file.pdf")
     click_button "Submit"
+    file_size = File.size(Rails.root + "spec/fixtures/file.pdf")
+
+    expect(page).to have_content(file_size)
   end
 end
